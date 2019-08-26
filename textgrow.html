@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text- growing and text-shrinking</title>
+		<script>
+			var c = 0, loading;
+			 function start()
+			 {
+			 loading= window.setInterval("incr()", 100);
+			 }
+			 function incr() {
+			 c = c + 1;
+			 t.innerHTML = "TEXT-GROWING : " + c + "pt";
+			 t.style.fontSize = c + "pt";
+			 
+			 if (c > 50) {
+			 window.clearTimeout(loading);
+			 
+			 loading= window.setInterval("decr()", 100);
+			 }
+			 t.style.color = "red";
+			 }
+			 function decr() {
+			 c = c - 1;
+			 t.innerHTML = "TEXT-SHRINKING: " + c + "pt";
+			 t.style.fontSize = c + "pt";
+			 window.status = c;
+			 if (c == 5) {
+			 window.clearTimeout(loading);
+			 }
+			 t.style.color = "blue";
+			 }
+			 </script>
+			 </head>
+			 <body bgcolor="#abcdef " onload="start()">
+			 <center>
+			 <p id="t"></p>
+			 </center>
+</body>
+</html>
